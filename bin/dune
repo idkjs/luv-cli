@@ -1,0 +1,8 @@
+(executable
+ (name luv_cli_app)
+ (modules (:standard))
+ (public_name luv_cli_app)
+ (libraries base stdio luv-cli.lib)
+ (flags -open Base))
+
+(include_subdirs unqualified)

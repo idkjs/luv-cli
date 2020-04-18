@@ -1,0 +1,37 @@
+{
+  "name": "luv-cli",
+  "esy": {
+    "build": "dune build -p #{self.name}",
+    "buildDev": "refmterr dune build --root . --only-package #{self.name}",
+    "install":
+      "esy-installer #{self.target_dir / 'default' / self.name '.install'}",
+    "buildEnv": { "ODOC_SYNTAX": "re" }
+  },
+  "dependencies": {
+    "@opam/base": "*",
+    "@opam/cmdliner": "1.0.4",
+    "@opam/dune": ">= 2.0",
+    "@opam/reason": "*",
+    "@opam/stdio": "*",
+    "@reason-native/console": "^0.1.0",
+    "@reason-native/pastel": "^0.3.0",
+    "ocaml": ">= 4.6.0"
+  },
+  "devDependencies": {
+    "@opam/dune-release": "*",
+    "@opam/merlin": "*",
+    "@opam/odoc": "*",
+    "@opam/utop": "*",
+    "@reason-native/rely": "*",
+    "refmterr": "*"
+  },
+  "scripts": {
+    "start": "esy x luv_cli_app",
+    "test": "esy dune exec test/test_runner.exe",
+    "doc": "esy dune build @doc",
+    "doc-path": "esy echo #{self.target_dir}/default/_doc/_html/index.html",
+    "format": "esy dune build @fmt --auto-promote",
+    "watch": "esy dune build -p #{self.name} --watch",
+    "utop": "esy dune utop lib -- -implicit-bindings"
+  }
+}

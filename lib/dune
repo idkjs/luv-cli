@@ -1,0 +1,8 @@
+(library
+ (name Luv_cli)
+ (public_name luv-cli.lib)
+ (modules (:standard))
+(libraries base console.lib pastel.lib cmdliner)
+ (flags -open Base))
+
+(include_subdirs unqualified)

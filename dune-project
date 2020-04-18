@@ -21,4 +21,6 @@ luv wrapped in a cli
   (odoc :with-doc)
   (reason :build)
   base
-  stdio))
+  stdio
+  luv
+  result))

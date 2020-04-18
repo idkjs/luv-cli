@@ -254,9 +254,27 @@ Hello, Luvers 👋
 What happened here? We used `Open Cmdliner` in `bin/luv_cli_app` but we didnt add it to `bin/dune`. We only added it to `lib/dune` and we did not even use it there. So I as a matter of structuring our project, we are including everything we need in our `lib` and calling any library functions we might want to use from our `lib`. Just for fun, take `cmdliner` out of `lib/dune`, add it to `bin/dune` then run `esy start`. You should get the same result. The way [Kohl](https://twitter.com/@citizen428) did it make sense though. It keeps control of everything in one place. After all, at this point, the only time we use `cmdliner` is when calling it with from `lib/utils.re`. This makes sense to me.
 
 
+## Adding Luv, First Attempt
 
+`esy add luv`, adding to `lib/dune`:
+```
+(libraries base console.lib pastel.lib cmdliner luv)
+```
+then `esy start` gets:
 
-
+```sh
+❯ esy start Luvers
+File "lib/dune", line 5, characters 48-51:
+5 | (libraries base console.lib pastel.lib cmdliner luv)
+                                                    ^^^
+Error: Library "luv" not found.
+Hint: try:
+dune external-lib-deps --missing --root . --only-package luv-cli @@default
+error: command failed: 'refmterr' 'dune' 'build' '--root' '.' '--only-package' 'luv-cli' (exited with 1)
+esy-build-package: exiting with errors above...
+error: build failed with exit code: 1
+  
+```
 
 ## Contributing
 

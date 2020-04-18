@@ -2,7 +2,7 @@
  (name Luv_cli)
  (public_name luv-cli.lib)
  (modules (:standard))
-(libraries base console.lib pastel.lib cmdliner)
+(libraries base console.lib pastel.lib cmdliner luv result)
  (flags -open Base))
 
 (include_subdirs unqualified)

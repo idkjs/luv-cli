@@ -20,7 +20,6 @@ luv wrapped in a cli
   ; (rely :with-test)
   (odoc :with-doc)
   (reason :build)
-  base
   stdio
   luv
-  result))
+))

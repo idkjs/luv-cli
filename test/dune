@@ -1,14 +1,13 @@
 (library
  (name luv_cli_test)
- (flags -open Base -linkall -g -w -9)
- (libraries base rely.lib luv-cli.lib)
+ (flags -linkall -g -w -9)
+ (libraries rely.lib luv-cli.lib)
  (modules
   (:standard \ test_runner)))
 
 (executable
  (name test_runner)
- (libraries base rely.lib luv_cli_test)
- (flags -open Base)
+ (libraries rely.lib luv_cli_test)
  (modules test_runner))
 
 (rule

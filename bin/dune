@@ -2,7 +2,6 @@
  (name luv_cli_app)
  (modules (:standard))
  (public_name luv_cli_app)
- (libraries base stdio luv-cli.lib)
- (flags -open Base))
+ (libraries stdio luv-cli.lib))
 
 (include_subdirs unqualified)

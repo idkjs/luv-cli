@@ -1,0 +1,15 @@
+name: Convert DEV Posts to Jekyll Markdown
+on:
+ schedule:
+     # At midnight twice a week on Monday and Thursday
+    - cron:  '0 0 * * 1,4'
+jobs:
+  dev-to-jekyll:
+    runs-on: ubuntu-latest
+    steps:
+    - name: dev-to-jekyll
+      uses: idkjs/luv-cli@master
+    env:
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      DEV_API_KEY: "${{ secrets.DEV_API_KEY }}"
+      NUM_OF_POSTS: "${{ secrets.NUM_OF_POSTS }}"

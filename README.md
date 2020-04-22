@@ -2,7 +2,7 @@
 
 [![Actions Status](https://github.com/idkjs/luv-cli/workflows/CI/badge.svg)](https://github.com/idkjs/luv-cli/actions)
 
-luv wrapped in a cli
+https://dev.to/idkjs/spin-with-luv-the-spin-build-1emg
 
 ## Scaffold with Spin
 
